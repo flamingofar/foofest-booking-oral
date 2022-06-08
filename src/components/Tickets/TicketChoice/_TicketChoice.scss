@@ -1,0 +1,39 @@
+@use "../../../styles/abstracts/variables" as *;
+@use "../../../styles/abstracts/mixins";
+
+.ticket_choice {
+	display: grid;
+	padding: 2rem 1.6rem;
+	text-align: center;
+
+	.ticket_number {
+		text-align: center;
+		display: inline-block;
+		width: 3ch;
+		font-size: 1.5rem;
+	}
+
+	& > p:last-child {
+		color: $text-color;
+	}
+
+	& > div {
+		display: flex;
+		flex-direction: column;
+
+		div {
+			padding-block-start: 1rem;
+			margin-inline-end: 1.5rem;
+
+			display: flex;
+			align-items: center;
+		}
+		p {
+			// font-size: $small;
+			font-family: $secondary-font;
+			font-weight: 200;
+			padding-inline: 0.5rem;
+			font-size: 1.5rem;
+		}
+	}
+}

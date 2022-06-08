@@ -1,0 +1,6 @@
+.guests {
+	& > p {
+		display: inline-block;
+		margin-block-end: 1rem;
+	}
+}

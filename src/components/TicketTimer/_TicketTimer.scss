@@ -1,0 +1,21 @@
+@use "../../styles/abstracts/variables" as *;
+.timer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	font-family: $primary-font;
+	letter-spacing: 0.15rem;
+	padding-block: 0.6rem;
+	color: $bg-color;
+
+	position: sticky;
+	top: 0;
+	z-index: 10;
+
+	background-color: $primary-color;
+
+	span {
+		background-color: transparent;
+	}
+}

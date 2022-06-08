@@ -1,0 +1,41 @@
+@use "../../../../styles/abstracts/variables" as *;
+
+.single_area {
+	display: flex;
+
+	// span {
+	// 	font-size: $tiny;
+	// }
+
+	& > div {
+		position: relative;
+		display: flex;
+
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+
+		padding-block-start: 1rem;
+		margin-inline: 2.2rem;
+
+		font-family: $secondary-font;
+
+		display: flex;
+		p {
+			// font-size: 1.6rem;
+			padding-inline: 0.5rem;
+		}
+		span {
+			// font-weight: bold;
+			color: grey;
+			font-size: $tiny;
+		}
+	}
+
+	p {
+		text-align: center;
+		display: inline-block;
+		width: 1.9rem;
+		// font-size: 1.5rem;
+	}
+}

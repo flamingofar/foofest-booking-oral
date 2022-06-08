@@ -1,0 +1,64 @@
+@use "../../../styles/abstracts/variables" as *;
+@use "../../../styles/abstracts/mixins";
+
+.modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.585);
+
+	display: grid;
+	place-content: center;
+	z-index: 999;
+
+	& > div {
+		width: 80vw;
+		border: $border-color ($border-thickness * 2) solid;
+		padding: 1rem;
+		background-color: #fff;
+		& > div:first-child {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			font-size: 2rem;
+			text-align: center;
+			p {
+				font-family: $secondary-font;
+				text-align: center;
+			}
+		}
+		& > div:last-child {
+			display: flex;
+			gap: 0.3rem;
+		}
+	}
+
+	a {
+		font-size: 1.5rem;
+	}
+
+	@include mixins.md {
+		p {
+			width: 56ch;
+		}
+		& > div {
+			width: 50vw;
+			padding: 2rem;
+
+			& > div:first-child {
+				margin-bottom: 1.5rem;
+			}
+			& > div:last-child {
+				justify-content: center;
+			}
+		}
+
+		a {
+		}
+	}
+}

@@ -1,0 +1,71 @@
+@use "../../../styles/abstracts/variables" as *;
+.tents {
+	fieldset {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		// font-family: $secondary-font;
+	}
+	label {
+		width: inherit;
+		display: flex;
+		justify-content: space-between;
+		font-family: $secondary-font;
+	}
+	input {
+		margin-inline-end: 0.8rem;
+	}
+}
+.tent_choice {
+	font-family: $secondary-font;
+	font-weight: 200;
+	fieldset {
+		display: flex;
+	}
+	& > fieldset {
+		flex-direction: column;
+		& > fieldset:last-child {
+			margin-block-start: 0.5rem;
+		}
+		p {
+			margin-inline-start: 1.2rem;
+
+			text-align: initial;
+			margin-block-end: 0.4rem;
+		}
+		fieldset:not(.crew) {
+			margin-block-end: 1rem;
+		}
+	}
+	fieldset.relative {
+		margin-inline: 2.2rem;
+	}
+
+	.crew {
+		margin-inline-start: 2rem;
+		margin-block-end: 0.3rem;
+		p:first-of-type {
+			text-align: center;
+			width: 2ch;
+		}
+		p:last-of-type {
+			display: inline-block;
+			vertical-align: middle;
+			margin-inline-start: 0.5rem;
+		}
+		p {
+			margin-inline: 0;
+		}
+	}
+
+	#modal_link {
+		font-weight: 600;
+		font-size: calc($small/1.2);
+		justify-self: center;
+		width: fit-content;
+		font-family: $secondary-font;
+		color: $primary-color;
+		text-decoration: underline;
+		cursor: pointer;
+	}
+}

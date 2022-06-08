@@ -1,0 +1,32 @@
+@use "../../styles/abstracts/_variables" as *;
+@use "../../styles/abstracts/mixins";
+nav {
+	font-family: $primary-font;
+	background: $bg-color;
+	display: flex;
+	height: 12vh;
+	// justify-content: space-between;
+	// padding: 1rem 1rem;
+	padding-inline: 1.5rem;
+
+	a {
+		align-self: center;
+		font-size: $large;
+	}
+
+	p {
+		// font-size: 1rem;
+		align-self: flex-end;
+		width: 100%;
+		text-align: end;
+		max-width: none;
+	}
+
+	@include mixins.md {
+		// height: 5.56rem;
+		height: 15vh;
+		p {
+			align-self: center;
+		}
+	}
+}

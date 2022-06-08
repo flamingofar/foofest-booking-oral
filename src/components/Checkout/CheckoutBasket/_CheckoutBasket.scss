@@ -1,0 +1,91 @@
+@use "../../../styles/abstracts/mixins";
+@use "../../../styles/abstracts/variables" as *;
+
+.basket {
+	order: -1;
+	position: relative;
+
+	.sticky {
+		position: sticky;
+		top: 0;
+	}
+
+	& > p {
+		width: 100%;
+		text-align: center;
+		font-size: $medium;
+	}
+
+	.desktop_checkout {
+		display: none;
+	}
+
+	@include mixins.md {
+		order: 1;
+		position: sticky;
+		top: 0;
+
+		.basket_desktop {
+			display: none;
+		}
+		.desktop_checkout {
+			display: block;
+		}
+	}
+}
+.basket_content {
+	position: absolute;
+	width: 100%;
+	border: $border-color $border-thickness solid;
+	padding-inline: 2rem;
+	padding-block: 1.3rem;
+
+	& > *:not(:last-child) {
+		border-bottom: $border-color $border-thickness solid;
+	}
+
+	h4 {
+		font-size: $medium;
+	}
+	p {
+		font-family: $secondary-font;
+	}
+
+	ul {
+		// font-weight: 700;
+		font-size: $small;
+		font-family: $secondary-font;
+		display: flex;
+		flex-direction: column;
+		padding-block-end: 0.5rem;
+	}
+	li {
+		font-family: $secondary-font;
+		margin-block-end: 1rem;
+		& > p {
+			text-decoration: underline;
+		}
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		span {
+			background: transparent;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			transform: translateY(70%);
+
+			display: inline-block;
+
+			font-size: 0.65rem;
+			color: rgb(96, 96, 96);
+		}
+	}
+
+	@include mixins.md {
+		order: 1;
+
+		position: static;
+		border-inline: none;
+	}
+}

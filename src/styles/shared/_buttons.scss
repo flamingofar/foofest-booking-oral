@@ -1,0 +1,77 @@
+@use "../abstracts/_variables.scss" as *;
+@use "../../styles/abstracts/mixins";
+
+.cta {
+	text-align: center;
+	display: inline-block;
+	// width: 100%;
+	width: fit-content;
+	align-self: center;
+
+	// font-family: $primary-font;
+	font-family: $secondary-font;
+	text-transform: uppercase;
+	padding: 1rem;
+	text-decoration: none;
+	font-size: $medium;
+
+	color: $bg-color;
+	background-color: $primary-color;
+	border-color: $primary-color;
+
+	border: $border-color $border-thickness solid;
+	cursor: pointer;
+	&.pay {
+		width: 100%;
+	}
+
+	@include mixins.md {
+		transition: 200ms;
+		&:hover {
+			background-color: $bg-color;
+			color: $primary-color;
+			border-color: $primary-color;
+		}
+	}
+}
+
+.cta-main {
+	background: $primary-color;
+	border-color: $primary-color;
+	color: $bg-color;
+	transition: 200ms;
+
+	&:hover {
+		background-color: $bg-color;
+		color: $primary-color;
+		border-color: $primary-color;
+	}
+}
+
+.choice_btn {
+	width: 1.8rem;
+	height: 1.8rem;
+
+	background-color: $bg-color;
+
+	cursor: pointer;
+
+	border: $border-color ($border-thickness * 2) solid;
+	&.disabled {
+		border: $disabled-color solid $border-thickness;
+		background-color: $bg-color;
+		color: $disabled-color;
+	}
+}
+.mobile,
+.desktop_checkout {
+	width: auto;
+}
+
+.cta.disabled,
+.disabled {
+	color: $disabled-color;
+	border: gray $border-thickness solid;
+	pointer-events: none;
+	background-color: gray;
+}

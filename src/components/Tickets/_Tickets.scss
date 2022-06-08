@@ -1,0 +1,25 @@
+@use "../../styles/abstracts/variables" as *;
+@use "../../styles/abstracts/mixins";
+
+.tickets-main {
+	h2 {
+		text-align: center;
+		// font-size: 2rem;
+		font-size: $medium;
+	}
+
+	.title > p:nth-child(2),
+	.title > p:nth-child(3) {
+		font-family: $primary-font;
+	}
+
+	p {
+		font-family: $secondary-font;
+	}
+
+	@include mixins.md {
+		.mobile {
+			display: none;
+		}
+	}
+}

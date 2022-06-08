@@ -1,0 +1,24 @@
+@use "../../../../styles/abstracts/variables" as *;
+.guest {
+	display: flex;
+	margin-block-end: 1.7rem;
+	span {
+		flex: 1;
+		font-family: $primary-font;
+		font-size: $medium;
+	}
+
+	form {
+		flex: 10;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		& > p {
+			margin-block-end: 0.5rem;
+		}
+	}
+	input {
+		font-family: $secondary-font;
+	}
+}

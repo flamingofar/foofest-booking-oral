@@ -1,0 +1,55 @@
+@use "../../../styles/abstracts/variables" as *;
+@use "../../../styles/abstracts/mixins";
+
+.payment {
+	display: flex;
+	justify-content: center;
+	margin-block-end: 2rem;
+	gap: 2rem;
+	label {
+		min-width: 6rem;
+		width: fit-content;
+		aspect-ratio: 1.7/1;
+		border: $border-color $border-thickness solid;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding-inline: 0;
+
+		font-family: $primary-font;
+		font-size: 1.2rem;
+	}
+
+	input {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+		height: 0;
+		width: 0;
+	}
+
+	#mobilepay:checked:checked ~ .mobilepay,
+	#creditcard:checked:checked ~ .creditcard,
+	#paypal:checked:checked ~ .paypal {
+		background-color: $primary-color;
+		border: none;
+		color: $bg-color;
+	}
+}
+.credit_wrapper {
+	width: 75%;
+	justify-self: center;
+
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	.double_input {
+		display: block;
+	}
+	@include mixins.md {
+		.double_input {
+			display: flex;
+			justify-content: center;
+		}
+	}
+}

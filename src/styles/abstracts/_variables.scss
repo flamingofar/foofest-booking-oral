@@ -1,0 +1,29 @@
+@use "../typography/_typography" as *;
+
+// Font-sizes
+$large: clamp(2.488rem, 2.2829rem + 0.9374vw, 2.986rem);
+$medium: clamp(1.424rem, 1.3507rem + 0.3351vw, 1.602rem);
+$small: clamp(1rem, 0.9485rem + 0.2353vw, 1.125rem);
+$tiny: clamp(0.889rem, 0.8433rem + 0.2089vw, 1rem);
+
+$mix1: clamp(1.777rem, 1.5332rem + 1.1144vw, 2.369rem);
+$mix2: clamp(1.266rem, 1.2009rem + 0.2974vw, 1.424rem);
+
+$border-thickness: 1px;
+$border-color: #000000;
+
+$primary-color: #0036f4;
+$text-color: #000000;
+$disabled-color: #d0d0d0;
+$placeholder-color: #737373;
+
+$blue: #708df8a8;
+$orange: #dda396a8;
+
+$bg-color: #ffffff;
+
+$primary-font: $Rakkas;
+$secondary-font: $Raleway;
+
+//! Container height
+$height: calc(100vh - 9.3rem);

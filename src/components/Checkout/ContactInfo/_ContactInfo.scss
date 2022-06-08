@@ -1,0 +1,9 @@
+.double_input {
+	display: flex;
+	justify-content: space-between;
+	gap: 0.6rem;
+
+	div {
+		width: inherit;
+	}
+}
