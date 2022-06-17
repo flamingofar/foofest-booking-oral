@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./_SingleArea.scss";
 
-function SingleArea({ title, spots, spotsAvai, order, setOrder, area, id, availability }) {
+function SingleArea({ title, spots, spotsAvai, order, setOrder, formik, id, availability }) {
 	const [available, setAvailable] = useState(true);
 
 	useEffect(() => {
@@ -19,7 +19,7 @@ function SingleArea({ title, spots, spotsAvai, order, setOrder, area, id, availa
 					type="radio"
 					id={title}
 					name="area"
-					onChange={area.handleChange}
+					onChange={formik.handleChange}
 					value={title}
 					defaultChecked={title === "Svartheim" ? true : false}
 					disabled={available ? false : true}

@@ -1,6 +1,6 @@
 import "./_TicketChoice.scss";
 import { useContext } from "react";
-import { OrderContext } from "../../../context/Tickets";
+import { OrderContext } from "../../../context/Order";
 import { v4 as uuidv4 } from "uuid";
 
 function TicketChoice() {
