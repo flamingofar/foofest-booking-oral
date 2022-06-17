@@ -41,7 +41,7 @@ function Area() {
 								spotsAvai={area.available}
 								order={order}
 								setOrder={setOrder}
-								area={formik}
+								formik={formik}
 								availability={availability}
 							/>
 						);

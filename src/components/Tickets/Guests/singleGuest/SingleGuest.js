@@ -6,7 +6,7 @@ import * as Yup from "yup";
 import "./_SingleGuest.scss";
 import "../../../../styles/shared/_textinput.scss";
 function SingleGuest({ number, ticket, id }) {
-	const guest = useFormik({
+	const formik = useFormik({
 		initialValues: {
 			name: "",
 			email: "",
@@ -29,36 +29,36 @@ function SingleGuest({ number, ticket, id }) {
 			setOrder((prev) => {
 				const newOrder = { ...prev };
 
-				newOrder.guests[guestIdx] = { ...newOrder.guests[guestIdx], name: guest.values.name };
+				newOrder.guests[guestIdx] = { ...newOrder.guests[guestIdx], name: formik.values.name };
 
 				return newOrder;
 			});
 		};
 		handleNameInput();
-	}, [guest.values.name]);
+	}, [formik.values.name]);
 
 	useEffect(() => {
 		const handleEmailInput = () => {
 			setOrder((prev) => {
 				const newOrder = { ...prev };
 
-				newOrder.guests[guestIdx] = { ...newOrder.guests[guestIdx], email: guest.values.email };
+				newOrder.guests[guestIdx] = { ...newOrder.guests[guestIdx], email: formik.values.email };
 
 				return newOrder;
 			});
 		};
 		handleEmailInput();
-	}, [guest.values.email]);
+	}, [formik.values.email]);
 
 	useEffect(() => {
 		setOrder((prev) => {
 			const newOrder = { ...prev };
 
-			newOrder.guests[guestIdx] = { ...newOrder.guests[guestIdx], isValid: guest.isValid };
+			newOrder.guests[guestIdx] = { ...newOrder.guests[guestIdx], isValid: formik.isValid };
 
 			return newOrder;
 		});
-	}, [guest.isValid]);
+	}, [formik.isValid]);
 
 	return (
 		<li className="guest">
@@ -76,12 +76,12 @@ function SingleGuest({ number, ticket, id }) {
 							id="name"
 							type="text"
 							name="name"
-							value={guest.values.name}
-							onChange={guest.handleChange}
-							onBlur={guest.handleBlur}
+							value={formik.values.name}
+							onChange={formik.handleChange}
+							onBlur={formik.handleBlur}
 						/>
 					</div>
-					<p className="error">{guest.touched.name && guest.errors.name && guest.errors.name}</p>
+					<p className="error">{formik.touched.name && formik.errors.name && formik.errors.name}</p>
 				</div>
 				<div className="input_wrapper">
 					<div>
@@ -92,12 +92,14 @@ function SingleGuest({ number, ticket, id }) {
 							id="email"
 							type="email"
 							name="email"
-							value={guest.values.email}
-							onBlur={guest.handleBlur}
-							onChange={guest.handleChange}
+							value={formik.values.email}
+							onBlur={formik.handleBlur}
+							onChange={formik.handleChange}
 						/>
 					</div>
-					<p className="error">{guest.touched.email && guest.errors.email && guest.errors.email}</p>
+					<p className="error">
+						{formik.touched.email && formik.errors.email && formik.errors.email}
+					</p>
 				</div>
 			</form>
 		</li>
