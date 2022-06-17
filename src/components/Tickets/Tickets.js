@@ -29,7 +29,7 @@ function Tickets() {
 					</TentsProvider>
 				</section>
 				<Basket setGuestsValid={setGuestsValid} guestsValid={guestsValid}></Basket>
-				<Link to={"/checkout"} className={`mobile cta ${guestsValid ? "disabled" : ""}`}>
+				<Link to={"/checkout"} className={`mobile cta ${guestsValid ? "" : "disabled"}`}>
 					Checkout
 				</Link>
 			</main>

@@ -42,7 +42,7 @@ function Basket({ linkActive, guestsValid, setGuestsValid }) {
 				<Link
 					disabled={guestsValid}
 					to={"/checkout"}
-					className={`desktop_checkout cta ${guestsValid ? "disabled" : ""}`}
+					className={`desktop_checkout cta ${guestsValid ? "" : "disabled"}`}
 				>
 					Checkout
 				</Link>

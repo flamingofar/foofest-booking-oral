@@ -145,14 +145,14 @@ function TentOptions({ guestsValid, setGuestsValid }) {
 			} else {
 				//  If there are not valid guests, set state to false
 				if (notValid.length > 0) {
-					setGuestsValid(true);
+					setGuestsValid(false);
 					// If there are no not valid guests set state to false
 				} else if (notValid.length < 1) {
-					setGuestsValid(false);
+					setGuestsValid(true);
 				}
 			}
 			if (order.guests.length === 0) {
-				setGuestsValid(true);
+				setGuestsValid(false);
 				setOrder((prev) => {
 					const newOrder = { ...prev };
 					// newOrder.guests[guestIdx] = { ...newOrder.guests[guestIdx], email: e.target.value };
@@ -169,9 +169,9 @@ function TentOptions({ guestsValid, setGuestsValid }) {
 	}, [JSON.stringify(order.guests)]);
 
 	return (
-		<section className="ticket_choice tent_choice section_p" disabled={guestsValid}>
+		<section className="ticket_choice tent_choice section_p" disabled={guestsValid ? false : true}>
 			<h2>Choose your tent option</h2>
-			<fieldset disabled={guestsValid}>
+			<fieldset disabled={guestsValid ? false : true}>
 				<fieldset className="relative ">
 					<input
 						id="own"
