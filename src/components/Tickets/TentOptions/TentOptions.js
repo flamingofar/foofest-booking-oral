@@ -18,7 +18,7 @@ function TentOptions({ guestsValid, setGuestsValid }) {
 	const totalTickets = order.guests.length;
 	const totalTentsChosen = order.crewTents.twoPerson + order.crewTents.threePerson;
 
-	const tentOptions = useFormik({
+	const formik = useFormik({
 		initialValues: {
 			greenCamping: false,
 			tent_option: "own",
@@ -114,24 +114,24 @@ function TentOptions({ guestsValid, setGuestsValid }) {
 			const newOrder = { ...prev };
 
 			newOrder.tentOption =
-				tentOptions.values.tent_option === "own"
+				formik.values.tent_option === "own"
 					? { ...newOrder.tentOption, bringOwn: true }
 					: { ...newOrder.tentOption, bringOwn: false };
 
 			return newOrder;
 		});
-	}, [tentOptions.values.tent_option]);
+	}, [formik.values.tent_option]);
 
 	//? Set green camping to what the user chooses
 	useEffect(() => {
 		setOrder((prev) => {
 			const newOrder = { ...prev };
 
-			newOrder.tentOption = { ...newOrder.tentOption, green: tentOptions.values.greenCamping };
+			newOrder.tentOption = { ...newOrder.tentOption, green: formik.values.greenCamping };
 
 			return newOrder;
 		});
-	}, [JSON.stringify(tentOptions.values)]);
+	}, [JSON.stringify(formik.values)]);
 
 	//? Check if all guest inputs are valid
 	useEffect(() => {
@@ -178,8 +178,8 @@ function TentOptions({ guestsValid, setGuestsValid }) {
 						type="radio"
 						name="tent_option"
 						value={"own"}
-						defaultChecked={tentOptions.values.tent_option === "own" ? true : false}
-						onChange={tentOptions.handleChange}
+						defaultChecked={formik.values.tent_option === "own" ? true : false}
+						onChange={formik.handleChange}
 						className="radio"
 					/>
 					<label className="radio_label" htmlFor="own">
@@ -192,17 +192,14 @@ function TentOptions({ guestsValid, setGuestsValid }) {
 						type="radio"
 						name="tent_option"
 						value={"pre"}
-						onChange={tentOptions.handleChange}
+						onChange={formik.handleChange}
 						className="radio"
 					/>
 					<label htmlFor="pre" className="radio_label">
 						<strong>Crew Setup</strong>
 					</label>
 				</fieldset>
-				<fieldset
-					className="crew"
-					disabled={tentOptions.values.tent_option === "own" ? true : false}
-				>
+				<fieldset className="crew" disabled={formik.values.tent_option === "own" ? true : false}>
 					<button
 						className={`choice_btn ${order.crewTents.twoPerson === 0 ? "disabled" : ""}`}
 						onClick={handleTwoPersonTent}
@@ -225,10 +222,7 @@ function TentOptions({ guestsValid, setGuestsValid }) {
 						<strong>2 person tent 299,-</strong>
 					</p>
 				</fieldset>
-				<fieldset
-					className="crew"
-					disabled={tentOptions.values.tent_option === "own" ? true : false}
-				>
+				<fieldset className="crew" disabled={formik.values.tent_option === "own" ? true : false}>
 					<button
 						className={`choice_btn ${order.crewTents.threePerson === 0 ? "disabled" : ""}`}
 						onClick={handleThreePersonTent}
@@ -256,7 +250,7 @@ function TentOptions({ guestsValid, setGuestsValid }) {
 						id="greencamping"
 						type="checkbox"
 						name="greenCamping"
-						onChange={tentOptions.handleChange}
+						onChange={formik.handleChange}
 						className="radio"
 					/>
 					<label htmlFor="greencamping" className="radio_label checkbox">
