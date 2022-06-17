@@ -1,7 +1,7 @@
 import "./_Basket.scss";
 import { Link } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
-import { OrderContext } from "../../../context/Tickets";
+import { OrderContext } from "../../../context/Order";
 import { useWindowWidth } from "@react-hook/window-size";
 
 function Basket({ linkActive, guestsValid, setGuestsValid }) {

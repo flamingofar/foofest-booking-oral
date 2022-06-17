@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AvailabilityProvider } from "./context/Availabilty";
-import { OrderProvider } from "./context/Tickets";
+import { OrderProvider } from "./context/Order";
 import Tickets from "./components/Tickets/Tickets";
 
 import App from "./App";

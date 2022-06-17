@@ -1,8 +1,7 @@
 import "./_Tickets.scss";
 import { Link } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
+import { useState } from "react";
 import { TentsProvider } from "../../context/Tents";
-import { OrderContext } from "../../context/Tickets";
 
 import Nav from "../Nav/Nav";
 import TicketChoice from "./TicketChoice/TicketChoice";

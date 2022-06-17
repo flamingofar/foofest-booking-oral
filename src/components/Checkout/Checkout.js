@@ -2,7 +2,7 @@ import "./_Checkout.scss";
 
 import { useNavigate } from "react-router-dom";
 import { useEffect, useContext, useState } from "react";
-import { OrderContext } from "../../context/Tickets";
+import { OrderContext } from "../../context/Order";
 
 import ContactInfo from "./ContactInfo/ContactInfo";
 import Address from "./Address/Address";

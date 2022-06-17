@@ -1,7 +1,7 @@
 import "./_Confirmation.scss";
 import Nav from "../../Nav/Nav";
 import { useContext } from "react";
-import { OrderContext } from "../../../context/Tickets";
+import { OrderContext } from "../../../context/Order";
 import { useLocation } from "react-router-dom";
 import party from "party-js";
 import html2canvas from "html2canvas";

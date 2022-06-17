@@ -1,7 +1,7 @@
 import SingleArea from "./SingleArea/SingleArea";
 import { useContext, useEffect } from "react";
 import { AvailabilityContext } from "../../../context/Availabilty";
-import { OrderContext } from "../../../context/Tickets";
+import { OrderContext } from "../../../context/Order";
 import { useFormik } from "formik";
 
 import "./Area.scss";

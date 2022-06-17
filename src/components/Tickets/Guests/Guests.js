@@ -1,7 +1,7 @@
 import SingleGuest from "./singleGuest/SingleGuest";
 import "./_Guests.scss";
 import { useContext, useEffect } from "react";
-import { OrderContext } from "../../../context/Tickets";
+import { OrderContext } from "../../../context/Order";
 import { v4 as uuidv4 } from "uuid";
 function Guests() {
 	const { order, setOrder } = useContext(OrderContext);
